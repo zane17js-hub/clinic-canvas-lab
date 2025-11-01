@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +16,14 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Services", "About", "Process", "Contact"];
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" }
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav 
@@ -27,7 +36,7 @@ export const Navigation = () => {
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
@@ -36,30 +45,36 @@ export const Navigation = () => {
             }`}>
               HealthStaff Pro
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+              <Link
+                key={item.name}
+                to={item.path}
                 className={`font-medium transition-colors hover:text-primary ${
-                  isScrolled ? 'text-foreground' : 'text-white'
+                  isActive(item.path)
+                    ? 'text-primary'
+                    : isScrolled 
+                      ? 'text-foreground' 
+                      : 'text-white'
                 }`}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             ))}
-            <Button 
-              className={`${
-                isScrolled 
-                  ? 'bg-gradient-primary text-white' 
-                  : 'bg-white text-primary hover:bg-white/90'
-              }`}
-            >
-              Get in Touch
-            </Button>
+            <Link to="/contact">
+              <Button 
+                className={`${
+                  isScrolled 
+                    ? 'bg-gradient-primary text-white' 
+                    : 'bg-white text-primary hover:bg-white/90'
+                }`}
+              >
+                Get in Touch
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,19 +91,25 @@ export const Navigation = () => {
           <div className="md:hidden py-4 bg-white rounded-b-2xl shadow-smooth-lg">
             <div className="flex flex-col gap-4">
               {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="px-4 py-2 text-foreground hover:text-primary font-medium"
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`px-4 py-2 font-medium ${
+                    isActive(item.path)
+                      ? 'text-primary'
+                      : 'text-foreground hover:text-primary'
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
               <div className="px-4">
-                <Button className="w-full bg-gradient-primary text-white">
-                  Get in Touch
-                </Button>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full bg-gradient-primary text-white">
+                    Get in Touch
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

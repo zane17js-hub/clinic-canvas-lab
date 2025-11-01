@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-healthcare.jpg";
 
 export const Hero = () => {
@@ -52,21 +53,25 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-left" style={{ animationDelay: "0.4s" }}>
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 shadow-glow text-lg px-8 group"
-            >
-              Get Started
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8"
-            >
-              <Phone className="mr-2" />
-              Contact Us
-            </Button>
+            <Link to="/services">
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 shadow-glow text-lg px-8 group"
+              >
+                Get Started
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8"
+              >
+                <Phone className="mr-2" />
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           {/* Stats */}

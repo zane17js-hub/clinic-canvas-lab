@@ -1,4 +1,5 @@
 import { Heart, Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,12 +10,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold">HealthStaff Pro</span>
-            </div>
+            </Link>
             <p className="text-white/70 mb-6">
               Your trusted partner in healthcare staffing solutions, connecting quality professionals with healthcare facilities across the UK.
             </p>
@@ -24,10 +25,10 @@ export const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#services" className="text-white/70 hover:text-white transition-colors">Our Services</a></li>
-              <li><a href="#about" className="text-white/70 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#process" className="text-white/70 hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="#contact" className="text-white/70 hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/" className="text-white/70 hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/services" className="text-white/70 hover:text-white transition-colors">Our Services</Link></li>
+              <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="text-white/70 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
