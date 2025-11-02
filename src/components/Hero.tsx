@@ -22,13 +22,13 @@ export const Hero = () => {
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-50" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-40" />
         <img
           src={heroImage}
           alt="Healthcare professionals"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/60" />
       </div>
 
       {/* Content */}
@@ -50,12 +50,10 @@ export const Hero = () => {
           </h1>
 
           <p
-            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in-left"
+            className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed animate-fade-in-left font-normal"
             style={{ animationDelay: "0.2s" }}
           >
-            Connecting healthcare facilities with qualified, compassionate
-            professionals. Available 24/7 for temporary, permanent, and
-            emergency placements.
+            Delivering fully qualified care professionals to care homes across the region. Available 24/7 for temporary, permanent, and emergency cover.
           </p>
 
           <div
@@ -90,9 +88,9 @@ export const Hero = () => {
           >
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                500+
+                150+
               </div>
-              <div className="text-white/80 text-sm md:text-base">
+              <div className="text-white/80 text-sm md:text-base font-normal">
                 Qualified Staff
               </div>
             </div>
@@ -100,15 +98,15 @@ export const Hero = () => {
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                 24/7
               </div>
-              <div className="text-white/80 text-sm md:text-base">
+              <div className="text-white/80 text-sm md:text-base font-normal">
                 Support Available
               </div>
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                98%
+                95%
               </div>
-              <div className="text-white/80 text-sm md:text-base">
+              <div className="text-white/80 text-sm md:text-base font-normal">
                 Client Satisfaction
               </div>
             </div>

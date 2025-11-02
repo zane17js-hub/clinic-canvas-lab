@@ -6,37 +6,37 @@ const services = [
   {
     icon: Stethoscope,
     title: "Registered Nurses",
-    description: "Highly qualified registered nurses with extensive experience in various healthcare settings, available for short or long-term placements.",
+    description: "NMC-registered nurses with proven care home experience, available for all shifts including emergency cover.",
     color: "from-primary to-primary-light"
   },
   {
     icon: Heart,
     title: "Healthcare Assistants",
-    description: "Compassionate and trained healthcare assistants ready to provide quality care and support to patients in hospitals, care homes, and private settings.",
+    description: "Care Certificate qualified HCAs experienced in elderly care, dementia support, and personal care delivery.",
     color: "from-secondary to-primary"
   },
   {
     icon: Users,
     title: "Support Workers",
-    description: "Dedicated support workers offering personalized care and assistance to individuals in their daily living activities and medical needs.",
+    description: "Trained support workers providing person-centered care and assistance with daily living activities.",
     color: "from-accent to-secondary"
   },
   {
     icon: Clock,
     title: "24/7 Emergency Cover",
-    description: "Round-the-clock availability for emergency staffing requirements. We respond quickly to ensure continuity of care in critical situations.",
+    description: "Same-day placement service ensuring your care home never faces dangerous staffing shortages.",
     color: "from-primary-dark to-accent"
   },
   {
     icon: Shield,
     title: "Temporary & Permanent",
-    description: "Flexible staffing solutions including temporary cover, temp-to-perm placements, and permanent recruitment to meet your specific needs.",
+    description: "Flexible solutions from single shifts to permanent recruitment, with temp-to-perm options available.",
     color: "from-secondary to-primary-dark"
   },
   {
     icon: Award,
     title: "Specialized Care",
-    description: "Specialist healthcare professionals for dementia care, palliative care, mental health support, and other specialized medical requirements.",
+    description: "Specialists in dementia, palliative care, mental health, and learning disabilities with advanced training.",
     color: "from-accent to-primary"
   }
 ];
@@ -78,10 +78,10 @@ export const Services = () => {
             <span className="text-primary text-sm font-semibold">Our Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Comprehensive Healthcare Staffing
+            Complete Care Staffing Solutions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Professional healthcare staff solutions tailored to your facility's unique requirements
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-normal">
+            Professional care home staffing tailored to your facility's exact requirements
           </p>
         </div>
 

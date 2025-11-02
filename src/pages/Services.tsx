@@ -19,9 +19,9 @@ const services = [
     icon: Stethoscope,
     title: "Registered Nurses (RNs)",
     shortDesc:
-      "Highly qualified registered nurses with extensive experience in various healthcare settings.",
+      "NMC-registered nurses with proven care home experience.",
     fullDesc:
-      "Our registered nurses are fully qualified with NMC registration and bring extensive experience across acute, community, and specialized care settings. Each RN undergoes rigorous verification of qualifications, enhanced DBS checks, and continuous professional development.",
+      "Our registered nurses hold valid NMC registration and bring extensive care home experience. Each RN undergoes rigorous qualification verification, enhanced DBS checks, and continuous professional development to ensure the highest standards of resident care.",
     features: [
       "NMC registered with valid PIN",
       "Minimum 2 years post-registration experience",
@@ -36,9 +36,9 @@ const services = [
     icon: Heart,
     title: "Healthcare Assistants (HCAs)",
     shortDesc:
-      "Compassionate and trained healthcare assistants ready to provide quality care.",
+      "Care Certificate qualified HCAs experienced in elderly care.",
     fullDesc:
-      "Our healthcare assistants are trained to the highest standards with Care Certificate completion and hands-on experience in patient care. They provide essential support in hospitals, care homes, and community settings with professionalism and empathy.",
+      "Our healthcare assistants are Care Certificate qualified with hands-on care home experience. They provide essential personal care, medication support, and compassionate assistance to residents with professionalism and empathy.",
     features: [
       "Care Certificate qualified",
       "Enhanced DBS checked",
@@ -53,9 +53,9 @@ const services = [
     icon: Users,
     title: "Support Workers",
     shortDesc:
-      "Dedicated support workers offering personalized care and assistance.",
+      "Trained support workers providing person-centered care.",
     fullDesc:
-      "Our support workers provide compassionate assistance to individuals requiring help with daily living activities. They work in residential settings, supported living environments, and provide community-based support with person-centered care approaches.",
+      "Our support workers deliver compassionate assistance to residents requiring help with daily living activities. They work in care home settings providing person-centered support focused on dignity, independence, and quality of life.",
     features: [
       "Person-centered care training",
       "Enhanced DBS clearance",
@@ -70,9 +70,9 @@ const services = [
     icon: Clock,
     title: "24/7 Emergency Cover",
     shortDesc:
-      "Round-the-clock availability for emergency staffing requirements.",
+      "Same-day placement service for urgent staffing needs.",
     fullDesc:
-      "Our 24/7 emergency response team ensures you never face staffing shortages. We maintain a pool of immediately available healthcare professionals ready to step in at short notice, ensuring continuity of care in critical situations.",
+      "Our 24/7 emergency response team ensures your care home never faces dangerous staffing shortages. We maintain a pool of immediately available care professionals ready to step in within hours, ensuring continuity of resident care in critical situations.",
     features: [
       "Same-day placements available",
       "Dedicated emergency response team",
@@ -86,9 +86,9 @@ const services = [
   {
     icon: Shield,
     title: "Temporary & Permanent Recruitment",
-    shortDesc: "Flexible staffing solutions for all your recruitment needs.",
+    shortDesc: "Flexible solutions from single shifts to permanent hires.",
     fullDesc:
-      "Whether you need short-term cover or permanent staff, we provide comprehensive recruitment solutions tailored to your facility's requirements. Our temp-to-perm options allow you to assess candidates before making permanent commitments.",
+      "Whether you need single shift cover or permanent staff, we provide comprehensive recruitment solutions tailored to your care home. Our temp-to-perm options allow you to assess candidates before making permanent commitments.",
     features: [
       "Temporary single shifts to long-term contracts",
       "Permanent placement services",
@@ -103,9 +103,9 @@ const services = [
     icon: Award,
     title: "Specialized Care Services",
     shortDesc:
-      "Specialist healthcare professionals for complex care requirements.",
+      "Specialists in dementia, palliative, and complex care needs.",
     fullDesc:
-      "We provide healthcare professionals with specialized training and experience in complex care areas including dementia care, palliative care, mental health, learning disabilities, and critical care nursing.",
+      "We provide care professionals with specialized training and experience in complex care areas including dementia care, palliative care, mental health support, and learning disabilities. Each specialist holds relevant certifications and ongoing training.",
     features: [
       "Dementia care specialists",
       "Palliative and end-of-life care",
@@ -130,16 +130,14 @@ const Services = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-4 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full">
               <span className="text-primary text-sm font-semibold">
-                Comprehensive Healthcare Staffing
+                Complete Care Staffing Solutions
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Our Services
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Professional healthcare staff solutions for every need. From
-              registered nurses to specialized care professionals, we provide
-              fully vetted, qualified staff 24/7.
+            <p className="text-xl text-white/90 leading-relaxed font-normal">
+              Professional care home staffing for every requirement. From registered nurses to specialized dementia care professionals, we provide fully vetted staff 24/7.
             </p>
           </div>
         </div>
