@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "./ui/logo";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,18 +37,7 @@ export const Navigation = () => {
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
-            <span
-              className={`text-xl font-bold transition-colors ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
-            >
-              HealthStaff Pro
-            </span>
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

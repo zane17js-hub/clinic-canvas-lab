@@ -13,30 +13,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CONTACT_NUMBER } from "@/lib/constants";
 
 const services = [
   {
-    icon: Stethoscope,
-    title: "Registered Nurses (RNs)",
-    shortDesc:
-      "Highly qualified registered nurses with extensive experience in various healthcare settings.",
-    fullDesc:
-      "Our registered nurses are fully qualified with NMC registration and bring extensive experience across acute, community, and specialized care settings. Each RN undergoes rigorous verification of qualifications, enhanced DBS checks, and continuous professional development.",
-    features: [
-      "NMC registered with valid PIN",
-      "Minimum 2 years post-registration experience",
-      "Specialized training in various medical fields",
-      "Regular competency assessments",
-      "Available for all shifts including nights and weekends",
-      "Experience in NHS and private healthcare settings",
-    ],
-    color: "from-primary to-primary-light",
-  },
-  {
     icon: Heart,
-    title: "Healthcare Assistants (HCAs)",
+    title: "Healthcare Assistants",
     shortDesc:
-      "Compassionate and trained healthcare assistants ready to provide quality care.",
+      "Compassionate and trained healthcare assistants ready to provide quality care and support to patients in hospitals, care homes, and private settings.",
     fullDesc:
       "Our healthcare assistants are trained to the highest standards with Care Certificate completion and hands-on experience in patient care. They provide essential support in hospitals, care homes, and community settings with professionalism and empathy.",
     features: [
@@ -48,6 +32,23 @@ const services = [
       "Manual handling certified",
     ],
     color: "from-secondary to-primary",
+  },
+  {
+    icon: Heart,
+    title: "Senior Healthcare Assistants",
+    shortDesc:
+      "Experienced senior healthcare assistants skilled in managing patient care and supervising junior staff.",
+    fullDesc:
+      "Our senior healthcare assistants bring additional leadership and clinical experience. They supervise care teams, support complex care needs, and ensure high standards of practice across shifts.",
+    features: [
+      "Proven supervisory experience",
+      "Advanced clinical skills",
+      "Safeguarding and leadership training",
+      "Experience in rota management",
+      "Mentoring and competency assessments",
+      "Enhanced DBS clearance",
+    ],
+    color: "from-primary to-accent",
   },
   {
     icon: Users,
@@ -62,31 +63,49 @@ const services = [
       "Mental health awareness training",
       "Learning disabilities support experience",
       "Safeguarding qualified",
-      "Communication and behavior support skills",
+      "Communication and behaviour support skills",
     ],
     color: "from-accent to-secondary",
+  },
+  {
+    icon: Stethoscope,
+    title: "Registered Nurses",
+    shortDesc:
+      "Highly qualified registered nurses with extensive experience in various healthcare settings, available for short or long-term placements.",
+    fullDesc:
+      "Our registered nurses are fully qualified with NMC registration and bring extensive experience across acute, community, and specialised care settings. Each RN undergoes rigorous verification of qualifications, enhanced DBS checks, and continuous professional development.",
+    features: [
+      "NMC registered with valid PIN",
+      "Minimum 2 years post-registration experience",
+      "Specialised training in various medical fields",
+      "Regular competency assessments",
+      "Available for all shifts including nights and weekends",
+      "Experience in NHS and private healthcare settings",
+    ],
+    color: "from-primary to-primary-light",
   },
   {
     icon: Clock,
     title: "24/7 Emergency Cover",
     shortDesc:
-      "Round-the-clock availability for emergency staffing requirements.",
+      "Round-the-clock availability for emergency staffing requirements. We respond quickly to ensure continuity of care in critical situations.",
     fullDesc:
       "Our 24/7 emergency response team ensures you never face staffing shortages. We maintain a pool of immediately available healthcare professionals ready to step in at short notice, ensuring continuity of care in critical situations.",
     features: [
       "Same-day placements available",
       "Dedicated emergency response team",
       "Pre-vetted pool of available staff",
-      "24-hour operations center",
+      "24-hour operations centre",
       "Emergency contact protocols",
-      "Rapid mobilization procedures",
+      "Rapid mobilisation procedures",
     ],
     color: "from-primary-dark to-accent",
   },
   {
     icon: Shield,
-    title: "Temporary & Permanent Recruitment",
-    shortDesc: "Flexible staffing solutions for all your recruitment needs.",
+    title: "Temporary & Permanent",
+    shortDesc:
+      "Flexible staffing solutions including temporary cover, temp-to-perm placements, and permanent recruitment to meet your specific needs.",
     fullDesc:
       "Whether you need short-term cover or permanent staff, we provide comprehensive recruitment solutions tailored to your facility's requirements. Our temp-to-perm options allow you to assess candidates before making permanent commitments.",
     features: [
@@ -101,11 +120,11 @@ const services = [
   },
   {
     icon: Award,
-    title: "Specialized Care Services",
+    title: "Specialized Care",
     shortDesc:
-      "Specialist healthcare professionals for complex care requirements.",
+      "Specialist healthcare professionals for dementia care, palliative care, mental health support, and other specialised medical requirements.",
     fullDesc:
-      "We provide healthcare professionals with specialized training and experience in complex care areas including dementia care, palliative care, mental health, learning disabilities, and critical care nursing.",
+      "We provide healthcare professionals with specialised training and experience in complex care areas including dementia care, palliative care, mental health, learning disabilities, and critical care nursing.",
     features: [
       "Dementia care specialists",
       "Palliative and end-of-life care",
@@ -222,13 +241,15 @@ const Services = () => {
               >
                 <Link to={"/contact"}>Get in Touch</Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white  hover:bg-white hover:text-primary text-lg px-8"
-              >
-                Call: 0800 123 4567
-              </Button>
+              <a href={`tel:${CONTACT_NUMBER}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white  hover:bg-white hover:text-primary text-lg px-8"
+                >
+                  Call: {CONTACT_NUMBER}
+                </Button>
+              </a>
             </div>
           </div>
         </div>

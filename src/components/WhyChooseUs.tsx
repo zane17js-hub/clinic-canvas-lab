@@ -1,36 +1,31 @@
-import { CheckCircle2 } from "lucide-react";
+import { UserCheck, Clock, Smile, PoundSterling } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import type { ComponentType, SVGProps } from "react";
 
 const reasons = [
   {
-    title: "Rigorous Vetting Process",
+    icon: UserCheck,
+    title: "Experienced Experts",
     description:
-      "Every healthcare professional undergoes comprehensive background checks, qualification verification, and competency assessments.",
+      "Care professionals with proven clinical experience and up-to-date credentials, ready to integrate with your team.",
   },
   {
-    title: "Fast Response Times",
+    icon: Clock,
+    title: "On-time Delivery",
     description:
-      "Our 24/7 operations team ensures rapid placement, often within hours for urgent requirements.",
+      "Reliable scheduling and rapid response for urgent gaps, helping you maintain consistent care services.",
   },
   {
-    title: "Ongoing Training",
+    icon: Smile,
+    title: "Dedicated Attitude",
     description:
-      "Continuous professional development programs keep our staff updated with the latest healthcare practices and regulations.",
+      "Staff selected for empathy, professionalism and strong communication to support patients and colleagues.",
   },
   {
-    title: "Dedicated Support",
+    icon: PoundSterling,
+    title: "Affordable Prices",
     description:
-      "Personal account managers provide round-the-clock support to both facilities and healthcare professionals.",
-  },
-  {
-    title: "Flexible Solutions",
-    description:
-      "From single shifts to long-term contracts, we adapt to your changing staffing needs with ease.",
-  },
-  {
-    title: "Quality Assurance",
-    description:
-      "Regular audits and feedback systems ensure consistently high standards of care delivery.",
+      "Clear, competitive pricing aligned to role type and contract length — no surprises on invoices.",
   },
 ];
 
@@ -80,20 +75,19 @@ export const WhyChooseUs = () => {
               Your Trusted Partner in Healthcare Staffing
             </h2>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              With over a decade of experience in healthcare recruitment, we
-              understand the critical importance of having the right staff at
-              the right time. Our commitment to excellence ensures peace of mind
-              for healthcare facilities and rewarding opportunities for
-              professionals.
+              Established in 2021, Care Apex has built a focused team delivering
+              professional staffing solutions to local healthcare providers. We
+              prioritise safe, reliable placements and clear communication at
+              every step.
             </p>
             <div className="flex items-center justify-between gap-4 p-6 bg-gradient-primary rounded-2xl shadow-smooth-lg">
               <div className="text-white w-full text-center">
-                <div className="text-4xl font-bold mb-1">10,000+</div>
+                <div className="text-4xl font-bold mb-1">320+</div>
                 <div className="text-white/90">Successful Placements</div>
               </div>
               <div className="h-16 w-px bg-white/30" />
               <div className="text-white w-full text-center">
-                <div className="text-4xl font-bold mb-1">200+</div>
+                <div className="text-4xl font-bold mb-1">45+</div>
                 <div className="text-white/90">Partner Facilities</div>
               </div>
             </div>
@@ -103,28 +97,30 @@ export const WhyChooseUs = () => {
           <div
             className={`${isVisible ? "animate-fade-in-right" : "opacity-0"}`}
           >
-            <div className="grid gap-6">
-              {reasons.map((reason, index) => (
-                <div
-                  key={reason.title}
-                  className="flex gap-4 p-6 bg-card rounded-xl border border-border/50 hover:border-primary/30 hover:shadow-smooth transition-all duration-300"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  <div className="flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
+              {reasons.map((reason, index) => {
+                const Icon = reason.icon as
+                  | ComponentType<SVGProps<SVGSVGElement>>
+                  | undefined;
+                return (
+                  <div
+                    key={reason.title}
+                    className="flex flex-col items-center justify-center gap-3 p-6 bg-card rounded-lg border border-border/30 transition-shadow text-center min-h-[170px]"
+                    style={{ animationDelay: `${index * 0.06}s` }}
+                  >
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-2">
+                      {Icon ? <Icon className="w-6 h-6 text-accent" /> : null}
+                    </div>
+
+                    <h3 className="text-base font-semibold text-foreground">
                       {reason.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm text-muted-foreground mt-2 max-w-[12rem]">
                       {reason.description}
                     </p>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

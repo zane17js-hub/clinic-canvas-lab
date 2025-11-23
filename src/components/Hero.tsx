@@ -90,10 +90,10 @@ export const Hero = () => {
           >
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                500+
+                120+
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Qualified Staff
+                Qualified Professionals
               </div>
             </div>
             <div className="text-center">
@@ -106,10 +106,10 @@ export const Hero = () => {
             </div>
             <div className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                98%
+                4.7/5
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Client Satisfaction
+                Average Client Rating
               </div>
             </div>
           </div>

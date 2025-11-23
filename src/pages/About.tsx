@@ -1,7 +1,19 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
-import { Target, Eye, Award, Users, Shield, Heart } from "lucide-react";
+import {
+  Target,
+  Eye,
+  Award,
+  Users,
+  Shield,
+  Heart,
+  Phone,
+  Mail,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { CONTACT_NUMBER, CONTACT_EMAIL } from "@/lib/constants";
 
 const values = [
   {
@@ -31,21 +43,20 @@ const values = [
 ];
 
 const stats = [
-  { number: "10+", label: "Years Experience" },
-  { number: "500+", label: "Healthcare Professionals" },
-  { number: "200+", label: "Partner Facilities" },
-  { number: "10,000+", label: "Successful Placements" },
-  { number: "98%", label: "Client Satisfaction" },
+  { number: "4+", label: "Years Experience" },
+  { number: "120+", label: "Healthcare Professionals" },
+  { number: "45+", label: "Partner Facilities" },
+  { number: "320+", label: "Successful Placements" },
+  { number: "4.7/5", label: "Average Client Rating" },
   { number: "24/7", label: "Support Available" },
 ];
 
 const certifications = [
   "Care Quality Commission (CQC) Registered",
   "Recruitment & Employment Confederation (REC) Member",
-  "Compliance with NHS Employment Standards",
-  "ISO 9001 Quality Management Certified",
+  "Aligned with NHS employment standards",
   "Data Protection (GDPR) Compliant",
-  "Professional Indemnity Insured",
+  "Professional indemnity insurance",
 ];
 
 const About = () => {
@@ -60,49 +71,45 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-4 px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full">
               <span className="text-primary text-sm font-semibold">
-                About HealthStaff Pro
+                About Care Apex
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Leading Healthcare Staffing Excellence
+              Professional, Responsive Healthcare Staffing
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              A decade of connecting exceptional healthcare professionals with
-              facilities that need them most.
+              Founded in 2021, Care Apex delivers dependable staffing solutions
+              to hospitals, care homes and community providers — focusing on
+              safety, clarity and fast response for organisations of all sizes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* Overview Section */}
       <section className="py-24 bg-background">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 text-center">
-              Our Story
+              Overview
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p className="text-lg leading-relaxed">
-                Founded in 2014, HealthStaff Pro emerged from a simple
-                observation: healthcare facilities were struggling to find
-                qualified, compassionate staff when they needed them most, while
-                talented healthcare professionals sought flexible, rewarding
-                opportunities.
+                Care Apex is a focused healthcare staffing provider offering
+                qualified, reliable professionals for hospitals, care homes and
+                community services. We match skills and availability to your
+                needs, prioritising safety and continuity of care.
               </p>
               <p className="text-lg leading-relaxed">
-                What started as a small recruitment agency in London has grown
-                into a nationwide provider of healthcare staffing solutions,
-                supporting over 200 healthcare facilities across the UK. Our
-                success stems from our unwavering commitment to quality, our
-                rigorous vetting processes, and our genuine care for both the
-                facilities we serve and the professionals we represent.
+                As a growing team established in 2021, we emphasise practical
+                processes: thorough checks, responsive scheduling and regular
+                communication. Our objective is to be a dependable staffing
+                partner that supports local services efficiently.
               </p>
               <p className="text-lg leading-relaxed">
-                Today, we're proud to have facilitated over 10,000 placements,
-                maintaining a 98% client satisfaction rate. Our team of
-                experienced healthcare recruitment specialists works around the
-                clock to ensure continuity of care, supporting the NHS, private
-                hospitals, care homes, and community care providers.
+                We provide short-term cover, temp-to-perm support and bespoke
+                recruitment solutions tailored to each facility's clinical and
+                operational needs.
               </p>
             </div>
           </div>
@@ -148,6 +155,31 @@ const About = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-24 bg-gradient-primary">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Impact in Numbers
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              A decade of excellence reflected in measurable outcomes
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-white mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-white/80 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-24 bg-background">
         <div className="container px-4 sm:px-6 lg:px-8">
@@ -183,57 +215,42 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-gradient-primary">
+      {/* Contact CTA */}
+      <section className="py-20 bg-gradient-primary">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Impact in Numbers
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Need staffing support today?
             </h2>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              A decade of excellence reflected in measurable outcomes
+            <p className="text-lg text-white/90 mb-8">
+              Get in touch with our team for rapid cover, permanent hires or
+              bespoke recruitment plans. We respond quickly and will work with
+              you to find the right staffing solution.
             </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-white/80 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link to="/contact">
+                <Button size="lg" className="bg-white text-primary px-8">
+                  Contact Us
+                </Button>
+              </Link>
 
-      {/* Certifications */}
-      <section className="py-24 bg-background">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Accreditations & Certifications
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                We maintain the highest industry standards and regulatory
-                compliance
-              </p>
+              <a
+                href={`tel:${CONTACT_NUMBER}`}
+                className="inline-flex items-center"
+              >
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-6 text-white border-white/30 hover:bg-white/10 hover:text-white"
+                >
+                  <Phone className="mr-2" /> {CONTACT_NUMBER}
+                </Button>
+              </a>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert) => (
-                <Card
-                  key={cert}
-                  className="p-6 flex items-center gap-4 hover:shadow-smooth transition-shadow border-border/50"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-foreground font-medium">{cert}</span>
-                </Card>
-              ))}
+            <div className="mt-6 text-white/80">
+              <Mail className="inline-block mr-2 -mt-0.5" /> {CONTACT_EMAIL}
             </div>
           </div>
         </div>

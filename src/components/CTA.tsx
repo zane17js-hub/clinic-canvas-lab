@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { CONTACT_NUMBER, CONTACT_EMAIL } from "@/lib/constants";
 
 export const CTA = () => {
   return (
@@ -12,11 +13,11 @@ export const CTA = () => {
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Healthcare Staffing?
+            Ready to simplify your staffing?
           </h2>
           <p className="text-xl text-white/90 mb-12 leading-relaxed">
-            Join hundreds of healthcare facilities that trust us for their
-            staffing needs. Let's discuss how we can support your team today.
+            Care Apex supports over 45 partner facilities with 320+ successful
+            placements. Contact us to discuss a practical plan for your team.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -46,7 +47,7 @@ export const CTA = () => {
               <div className="text-left">
                 <div className="text-white/70 text-sm">Call Us 24/7</div>
                 <div className="text-white font-semibold text-lg">
-                  0800 123 4567
+                  {CONTACT_NUMBER}
                 </div>
               </div>
             </div>
@@ -56,7 +57,7 @@ export const CTA = () => {
               <div className="text-left">
                 <div className="text-white/70 text-sm">Email Us</div>
                 <div className="text-white font-semibold text-lg">
-                  info@healthstaff.com
+                  {CONTACT_EMAIL}
                 </div>
               </div>
             </div>
